@@ -10,7 +10,7 @@ class Dashboard extends Controller
     public function show()
     {
         $tickets = Ticket::paginate(20);
-        return view('show.dashboard',
+        return view('raffles.dashboard',
             ['tickets' => $tickets]
         );
     }

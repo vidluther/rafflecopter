@@ -6,9 +6,9 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active" aria-current="page">Dashboard</a></li>
-            <li class="nav-item"><a href="{{ route('raffles') }}" class="nav-link">Raffle Manager</a></li>
-            <li class="nav-item"><a href="{{ route('tickets') }}" class="nav-link">Buy A Ticket</a></li>
+{{--            <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active" >Dashboard</a></li>--}}
+            <li class="nav-item"><a href="{{ route('new-raffle') }}" class="nav-link">Create New Raffle</a></li>
+            <li class="nav-item"><a href="{{ route('buy-raffle-ticket') }}" class="nav-link">Buy Raffle Ticket</a></li>
         </ul>
     </header>
 

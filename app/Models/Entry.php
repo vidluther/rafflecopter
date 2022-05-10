@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Raffle extends Model
+class Entry extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['name', 'prize'];
-
+    protected $fillable = ['raffle_id', 'name', 'phone'];
 }

@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\RaffleController;
+use App\Http\Controllers\EntryController;
+
+use App\Http\Livewire\NewEntry;
+use App\Http\Livewire\NewRaffle;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +18,26 @@ use App\Http\Controllers\Dashboard;
 |
 */
 
-Route::get('/', [Dashboard::class,'show'])->name('home');
-Route::get('/raffles', [\App\Http\Controllers\Raffle::class, 'show'])->name('raffles');
-Route::get('/tickets', [\App\Http\Controllers\Ticket::class, 'show'])->name('tickets');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
+
+Route::get('/raffle/view/{raffle_id}', [RaffleController::class,'viewentries'] )
+    ->name('view-raffle-entries');
+
+Route::get('/raffle/new/', [RaffleController::class,'new'])
+    ->name('new-raffle');
+
+Route::get('/raffle/buy', [EntryController::class,'new'])
+    ->name('buy-raffle-ticket');
+
+
+Route::get('/', [RaffleController::class,'list'])
+    ->name('home');
+
+
+
+Route::get('/pick-a-winner/{raffle_id}', [RaffleController::class, 'winner'])
+    ->name('chicken-dinner');
+
+
+
